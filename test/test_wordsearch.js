@@ -78,7 +78,7 @@ describe("#wordSearch()", function() {
     assert.isTrue(result);
   });
 
-  it("should return true if the word is present on a diagonal in any direction", function() {
+  it("should return true if the word is present diagonnally from bottom left to top right", function() {
     let result = wordSearch([
       ['A', 'W', 'C', 'F', 'Q', 'U', 'A', 'L'],
       ['S', 'E', 'I', 'N', 'F', 'E', 'L', 'D'],
@@ -92,7 +92,9 @@ describe("#wordSearch()", function() {
     ], 'QUAB');
     
     assert.isTrue(result);
+  });
 
+  it("should return true if the word is present diagonnally from top left to bottom right", function() {
     result = wordSearch([
       ['A', 'W', 'C', 'F', 'Q', 'U', 'A', 'L'],
       ['S', 'E', 'I', 'N', 'F', 'E', 'L', 'D'],
@@ -106,7 +108,9 @@ describe("#wordSearch()", function() {
     ], 'YEAS');
 
     assert.isTrue(result);
+  });
 
+  it("should return true if the word is present diagonnally from bottom right to top left", function() {
     result = wordSearch([
       ['A', 'W', 'C', 'F', 'Q', 'U', 'A', 'L'],
       ['S', 'E', 'I', 'N', 'F', 'E', 'L', 'D'],
@@ -120,7 +124,9 @@ describe("#wordSearch()", function() {
     ], 'RUFF');
 
     assert.isTrue(result);
+  });
 
+  it("should return true if the word is present diagonnally from top right to bottom left", function() {
     result = wordSearch([
       ['A', 'W', 'C', 'F', 'Q', 'U', 'A', 'L'],
       ['S', 'E', 'I', 'N', 'F', 'E', 'L', 'D'],
@@ -137,16 +143,3 @@ describe("#wordSearch()", function() {
 
   });
 });
-
-// [
-//   'AECTYEAS', 'EDTEYVAD', 'WIFEEYI',
-//   'ZCWNERL',  'CNQVRB',   'KAAERG',
-//   'FFURL',    'FKPYL',    'QEAG',
-//   'QUAB',     'ULL',      'UAI',
-//   'AD',       'AS',       'AECTYEAS',
-//   'EDTEYVAD', 'SFJSNPAL', 'OBRSEULL',
-//   'YMCEAUA',  'UFCTQEA',  'HHRWKU',
-//   'BHJFFU',   'WFTAQ',    'WMCNQ',
-//   'BBCF',     'HFIF',     'UDK',
-//   'YEC',      'OZ',       'SW'
-// ]
