@@ -1,12 +1,15 @@
 const wordSearch = (letters, word) => {
+  if (letters.length === 0 || letters[0].length === 0) {
+    return false;
+  }
+  if (word.length === 0) {
+    return false;
+  }
+
   const rows = getRows(letters);
   const columns = getColumns(letters);
   const diagonals = getDiagonals(letters);
   return isWordInArray(rows, word) || isWordInArray(columns, word) || isWordInArray(diagonals, word);
-};
-
-const reverseString = function(str) {
-  return str.split('').reverse().join('');
 };
 
 const getDiagonals = function(arr) {
@@ -37,6 +40,10 @@ const getColumns = function(arr) {
   }
   return columns;
 }
+
+const reverseString = function(str) {
+  return str.split('').reverse().join('');
+};
 
 const isWordInArray = function(arr, word) {
   word = word.toLowerCase();
